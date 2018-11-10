@@ -3,6 +3,20 @@
 import sys
 import math
 
+def calc_angle(vx, vy, vz):
+    V = vz / math.sqrt((vx**2) + (vy**2) + (vz**2))
+    angle = math.asin(V)
+    angle = math.degrees(angle)
+    if angle < 0:
+        angle = angle * -1
+    if angle > 90:
+        angle = 180 - angle
+    return (angle)
+
+if len(sys.argv) != 8:
+    exit (84)
+if int(sys.argv[7]) < 0:
+    exit (84)
 x1 = float(sys.argv[1])
 y1 = float(sys.argv[2])
 z1 = float(sys.argv[3])
@@ -16,15 +30,11 @@ vz = z2	- z1
 xn = x2 + vx * n
 yn = y2	+ vy * n
 zn = z2	+ vz * n
-angle = ()
 
 print("The velocity vector of the ball is:\n({:.2f}, {:.2f}, {:.2f})".format(vx, vy, vz))
 print("At time t + {}, ball coordinates will be:\n({:.2f}, {:.2f}, {:.2f})".format(n, xn, yn, zn))
-if z2 >= 0 and zn <= 0:
-    angle = 0
-    print("The incidence angle is:\n{:.2f} degrees".format(angle))
-if z2 < 0 and zn > 0:
-    angle = 1
+if z2 >= 0 and zn <= 0 or z2 < 0 and zn > 0:
+    angle = calc_angle(vx, vy, vz)
     print("The incidence angle is:\n{:.2f} degrees".format(angle))
 else:
     print("The ball won't reach the bat")
