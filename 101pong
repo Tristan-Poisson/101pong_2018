@@ -24,6 +24,17 @@ if len(sys.argv) != 8:
     exit (84)
 if int(sys.argv[7]) < 0:
     exit (84)
+
+i = 1
+
+while (i < len(sys.argv)):
+    j = 0
+    while (j < len(sys.argv[i])):
+        if (ord(sys.argv[i][j]) < ord('-') or ord(sys.argv[i][j]) > ord('9') or ord(sys.argv[i][j]) == ord('/')):
+            exit (84)
+        j = j + 1
+    i = i + 1
+
 x1 = float(sys.argv[1])
 y1 = float(sys.argv[2])
 z1 = float(sys.argv[3])
@@ -44,5 +55,5 @@ if z2 >= 0 and zn <= 0 or z2 < 0 and zn > 0:
     angle = calc_angle(vx, vy, vz)
     print("The incidence angle is:\n{:.2f} degrees".format(angle))
 else:
-    print("The ball won't reach the bat")
+    print("The ball won't reach the bat.")
 exit (0)
