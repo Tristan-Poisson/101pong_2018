@@ -45,3 +45,4 @@ if z2 >= 0 and zn <= 0 or z2 < 0 and zn > 0:
     print("The incidence angle is:\n{:.2f} degrees".format(angle))
 else:
     print("The ball won't reach the bat")
+exit (0)
