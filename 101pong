@@ -4,7 +4,11 @@ import sys
 import math
 
 def calc_angle(vx, vy, vz):
-    V = vz / math.sqrt((vx**2) + (vy**2) + (vz**2))
+    V = math.sqrt((vx**2) + (vy**2) + (vz**2))
+    if V == 0:
+        return (0.00)
+    else:
+        V = vz / math.sqrt((vx**2) + (vy**2) + (vz**2))
     angle = math.asin(V)
     angle = math.degrees(angle)
     if angle < 0:
