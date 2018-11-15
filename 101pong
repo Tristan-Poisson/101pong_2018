@@ -18,7 +18,7 @@ def calc_angle(vx, vy, vz):
     return (angle)
 
 if sys.argv[1] == "-h":
-    print("USAGE\n       ./101pong x0 y0 z0 x1 y1 z1 n\n\nDESCRIPTION\n       x0   ball abscissa at time t - 1\n       y0   ball ordinate at time t - 1\n       z0   ball altitude at time t - 1\n       x1   ball abscissa at time t\n       y1   ball ordinate at time t\n       z1   ball altitude at time t\n       n    time shift (greater than or equal to zero, integer)")
+    print("USAGE\n      ./101pong x0 y0 z0 x1 y1 z1 n\n\nDESCRIPTION\n       x0   ball abscissa at time t - 1\n       y0   ball ordinate at time t - 1\n       z0   ball altitude at time t - 1\n       x1   ball abscissa at time t\n       y1   ball ordinate at time t\n       z1   ball altitude at time t\n       n    time shift (greater than or equal to zero, integer)")
     exit (0)
 if len(sys.argv) != 8:
     exit (84)
